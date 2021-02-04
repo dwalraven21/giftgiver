@@ -1,5 +1,11 @@
 import React, { Component } from "react"
-import { Form, FormGroup, FormLabel, FormControl } from "react-bootstrap"
+import {
+  Button,
+  Form,
+  FormGroup,
+  FormLabel,
+  FormControl,
+} from "react-bootstrap"
 
 class Gift extends Component {
   constructor() {
@@ -23,13 +29,19 @@ class Gift extends Component {
           <FormGroup>
             <FormLabel>Present</FormLabel>
             <FormControl
-              className="inut-present"
+              className="input-present"
               onChange={(event) =>
                 this.setState({ present: event.target.value })
               }
             />
           </FormGroup>
         </Form>
+        <Button
+          className="btn-remove"
+          onClick={() => this.props.removeGift(this.props.gift.id)}
+        >
+          Remove Gift
+        </Button>
       </div>
     )
   }
